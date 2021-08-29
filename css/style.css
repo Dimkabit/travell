@@ -109,6 +109,7 @@ body.lock {
   max-width: 1600px;
   margin: 0 auto;
   width: 100%;
+  overflow: hidden;
 }
 
 @media (max-width: 1612px) {
@@ -298,25 +299,32 @@ body.lock {
 }
 
 .main__scrin {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3))) top/cover no-repeat, url("../img/main.png") top/cover no-repeat;
-  background: linear-gradient(rgba(0, 0, 0, 0.3)) top/cover no-repeat, url("../img/main.png") top/cover no-repeat;
-  background-position-x: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: url("../img/main.png") top/contain no-repeat;
+  min-height: 100%;
   background-size: 100% 100%;
 }
 
-@media (max-width: 1240px) {
+@media (max-width: 978px) {
   .main__scrin {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3))) top/cover no-repeat, url("../img/main124.png") top/cover no-repeat;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3)) top/cover no-repeat, url("../img/main124.png") top/cover no-repeat;
-    background-position-x: center;
+    background: url("../img/main.png") top/cover no-repeat;
+    min-height: 100%;
+    background-position: center;
     background-size: 100% 100%;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .main__scrin {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3))), url("../img/main890.png");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3)), url("../img/main890.png");
+    background: url("../img/main.png") top/cover no-repeat;
+    min-height: 100%;
+    background-position: 79%;
   }
 }
 
@@ -440,15 +448,17 @@ body.lock {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .location__card-item:last-child {
   margin: 0;
+  margin-bottom: 20px;
 }
 
 .location__card-item:hover {
-  -webkit-box-shadow: 0px 6px 35px rgba(0, 0, 0, 0.08);
-          box-shadow: 0px 6px 35px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0px 6px 35px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 6px 35px rgba(0, 0, 0, 0.1);
 }
 
 .location__card-title {
@@ -475,20 +485,26 @@ body.lock {
 }
 
 .up {
-  width: 40px;
-  height: 40px;
-  opacity: 0.3;
-  position: fixed;
-  bottom: 50px;
-  right: 100px;
   display: none;
-  text-indent: -9999px;
-  border-radius: 50%;
-  background: url("..img/icons/p-left.svg");
 }
 
-.up:hover {
+.up-image {
+  width: 30px;
+  height: 30px;
+  opacity: 0.3;
+  position: fixed;
+  bottom: 90px;
+  right: 5%;
+  text-indent: -9999px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 90;
+}
+
+.up-image:hover {
   background: #C9453B;
+  width: 30px;
+  height: 30px;
 }
 
 @media (max-width: 970px) {
@@ -512,7 +528,7 @@ body.lock {
 }
 
 .special {
-  margin: 140px 0px 0px 0px;
+  margin: 120px 0px 0px 0px;
 }
 
 .special__title {
@@ -662,6 +678,16 @@ body.lock {
   background: #C9453B;
 }
 
+.swiper-button-pre {
+  z-index: 10;
+  cursor: pointer;
+}
+
+.swiper-button-nex {
+  z-index: 10;
+  cursor: pointer;
+}
+
 @media (max-width: 1240px) {
   .swiper-slide {
     margin: 50px 0px 0px 20px;
@@ -745,6 +771,11 @@ body.lock {
           justify-content: center;
 }
 
+.context__big:hover {
+  -webkit-box-shadow: 0px 6px 35px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 6px 35px rgba(0, 0, 0, 0.1);
+}
+
 .context__big-title {
   margin: 35px 0px 0px 0px;
   font-family: 'Gelasio';
@@ -781,6 +812,10 @@ body.lock {
   opacity: 0.5;
 }
 
+.context__big {
+  margin: 0px 0px 20px 0px;
+}
+
 .context__smoll {
   margin: 0px 0px 0px 32px;
 }
@@ -790,6 +825,11 @@ body.lock {
   display: -ms-flexbox;
   display: flex;
   margin: 0px 0px 30px 0px;
+}
+
+.smoll__blog:hover {
+  -webkit-box-shadow: 0px 6px 35px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 6px 35px rgba(0, 0, 0, 0.1);
 }
 
 .smoll__blog-about {
@@ -1075,7 +1115,7 @@ input {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .footer {
     height: 100%;
   }
